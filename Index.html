@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Rotating Quotes</title>
+
+<style>
+
+body { font-family: sans-serif; text-align: center; padding: 2em; }
+
+#quote { font-size: 1.5em; transition: opacity 0.5s; }
+
+</style>
+
+</head>
+
+<body>
+
+<div id="quote">Loading...</div>
+
+<script>
+
+const quotes = [
+
+"You can make anything by writing. - C.S. Lewis",
+
+"Start before you are ready. - Steven Pressfield",
+
+"The most important step a man can take. it's not the first one, is it? It's the next one. Always the next step. - Brandon Sanderson",
+
+"Err on the side of awesome. - Brandon Sanderson",
+  
+"The creative adult is the child who has survived. - Ursula K. Le Guin",
+  
+"You have to know when to go on, and when to let go. - Robert Jordan",
+  
+"Ideas are cheap. Ihave more ideas now than i could ever write up. To my mind, it's the execution that is all important. - George R. R. Martin",
+  
+"All we have to decide is what to do with the time that is given us. - J. R. R. Tolkien",
+  
+"When you cut piecesout of the truth to avoid looking like a fool you end up looking like a moron instead. - Robin Hobb",
+  
+"A woman must have money and a room of her own if she is to write fiction. - Virginia Woolf",
+
+"I write because i have to. I write because i cannot imagine my life not writing. - Chimamanda Ngozi Adichie",
+
+"You do not rise to the level of your goals. You fall to the level of your systems. - James Clear",
+
+"I never could have done what i have done without the habits of punctuality, order and diligence. - Charles Dickens",
+
+"I dwell in Possibility. A fairer House than prose. - Emily Dickinson",
+
+"Let other pens dwell on guilt and misery. I quit such odious subjects as soon as I can. - Jane Austen",
+
+"But there is also the minority of gifted, wilful people who are determined to live their own lives to the end, and writers belong in this class. - George Orwell",
+
+"Journey before destination. There are always several ways to achieve a goal. Failure is preferable to the wrong path. - Brandon Sanderson",
+
+"If there is a book that you want to read, but it hasn't been written yet, then you must write it. - Toni Morrison",
+
+];
+
+let index = 0;
+
+const quoteEl = document.getElementById("quote");
+
+function showQuote() {
+
+quoteEl.style.opacity = 0;
+
+setTimeout(() => {
+
+quoteEl.textContent = quotes[index];
+
+quoteEl.style.opacity = 1;
+
+index = (index + 1) % quotes.length;
+
+}, 500);
+
+}
+
+showQuote();
+
+setInterval(showQuote, 5000); // rotates every 5 seconds
+
+</script>
+
+</body>
+
+</html>
